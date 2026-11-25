@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Componentes Eletrônicos</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="topo">
+    <span class="logo">CircuitoLab</span>
+    <span class="sub">Cadastro de componentes eletrônicos</span>
+</header>
+
+<main>
+
+    <!-- TELA 1: CADASTRO / ALTERAÇÃO -->
+    <section id="telaCadastro" class="tela hidden">
+        <h2 id="tituloForm">CADASTRO DE PRODUTOS</h2>
+
+        <form id="formProduto" novalidate>
+            <div class="form-grid">
+                <div class="campos">
+                    <label>Código:
+                        <input type="text" id="codigo" placeholder="Código do produto" readonly>
+                    </label>
+                    <label>Produto:
+                        <input type="text" id="nome" placeholder="Nome do produto">
+                    </label>
+                    <label>Descrição:
+                        <textarea id="descricao" rows="3" placeholder="Descrição do produto"></textarea>
+                    </label>
+                    <label>Preço: R$
+                        <input type="text" id="preco" placeholder="0.00" inputmode="decimal">
+                    </label>
+                </div>
+
+                <div class="foto-box">
+                    <div class="preview"><img id="imgPreview" alt="Prévia do produto" class="hidden"></div>
+                    <label>Foto:
+                        <input type="text" id="foto" placeholder="Imagem do produto" maxlength="10">
+                    </label>
+                    <small>Nome da imagem sem extensão (pasta img/)</small>
+                </div>
+            </div>
+
+            <p id="erro" class="erro"></p>
+
+            <div class="botoes">
+                <button type="submit" id="btnSalvar" class="btn verde">Cadastrar Produto</button>
+                <button type="button" id="btnCancelar" class="btn cinza">Cancelar</button>
+            </div>
+        </form>
+    </section>
+
+    <!-- TELA 2: LISTAGEM -->
+    <section id="telaLista" class="tela">
+        <h2>LISTA DE PRODUTOS</h2>
+        <button type="button" id="btnNovo" class="btn verde">Cadastrar Produto</button>
+
+        <table id="tabelaProdutos">
+            <thead>
+                <tr><th>Foto</th><th>Código</th><th>Produto</th><th>Descrição</th><th>Preço</th><th></th></tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </section>
+
+    <!-- TELA 3: EXCLUSÃO -->
+    <section id="telaExcluir" class="tela hidden">
+        <h2>EXCLUSÃO DE PRODUTOS</h2>
+        <div id="detalheExcluir" class="detalhe"></div>
+    </section>
+
+</main>
+
+<script src="script.js"></script>
+</body>
+</html>
